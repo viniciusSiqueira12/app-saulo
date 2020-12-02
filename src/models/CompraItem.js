@@ -9,7 +9,11 @@ const CompraItemSchema = new mongoose.Schema({
   Produto: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Produto'
-  }, 
+  },
+  Compra: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Compra'
+  },
   DataCriacao: {
     type: Date,
     default: Date.now
