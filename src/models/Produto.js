@@ -28,10 +28,10 @@ const ProdutoSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  Usuario: { 
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Usuario' 
-  },
+  CompraItens: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'CompraItem'
+  }],
   DataCriacao: {
     type: Date,
     default: Date.now

@@ -35,5 +35,16 @@ module.exports = {
     catch(err) {
         return res.status(400).json({erro: 'Erro ao buscar usuário'})
     }
-  }
+  },
+
+  async usuario(req, res) {
+    try{
+      const usuarioId = res.locals.auth_data.id;
+      const usuario = await Usuario.findById(usuarioId);  
+      return res.status(200).json({usuario});
+    }
+    catch(err) {
+      return res.status(400).json({err : err});
+    } 
+  },
 }

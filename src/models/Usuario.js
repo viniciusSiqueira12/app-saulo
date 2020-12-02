@@ -8,12 +8,6 @@ const UsuarioSchema = new mongoose.Schema({
     minlength: 3,
     maxlength: 60
   },
-  Sobrenome: {
-    type: String,
-    required: true,
-    minlength: 3,
-    maxlength: 60
-  },
   Email: {
     type: String,
     required: true,
@@ -29,33 +23,9 @@ const UsuarioSchema = new mongoose.Schema({
     minlength: 6,
     maxlength: 50
   },
-  Logradouro: {
-    type: String,
-    maxlength: 50
-  },
-  Numero: {
-    type: Number,
-    maxlength: 5
-  },
-  Cep: {
-    type: String,
-    maxlength: 50
-  },
-  Bairro: {
-    type: String,
-    maxlength: 50
-  },
-  Localidade: {
-    type: String,
-    maxlength: 50
-  },
-  Uf: {
-    type: String,
-    maxlength: 50
-  },
-  Produtos: [{
+  Enderecos: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Produto'
+    ref: 'Endereco'
   }],
   DataCriacao : {
     type: Date,
