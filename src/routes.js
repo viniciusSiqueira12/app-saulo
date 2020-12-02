@@ -12,10 +12,10 @@ routes.post('/acesso/autenticar', AutenticacaoController.login);
 
 
 //Produtos
-routes.post('/produtos/criar', authorized ,multer.single('imagem'), ProdutoController.store);
+routes.post('/produtos/criar', multer.single('imagem'), ProdutoController.store);
 routes.get('/produtos/listar', authorized, ProdutoController.listarProdutos);
-routes.put('/produtos/editar/:id', authorized, multer.single('imagem'), ProdutoController.update);
-routes.delete('/produtos/deletar/:id', authorized, ProdutoController.destroy);
+routes.put('/produtos/editar/:id', multer.single('imagem'), ProdutoController.update);
+routes.delete('/produtos/deletar/:id', ProdutoController.destroy);
 
 module.exports = routes;
 
